@@ -13,7 +13,7 @@ const displayData = (data)=>{
         // create element
         const categoryBtn = document.createElement("div")
         categoryBtn.innerHTML = `
-              <button class="btn btn-sm">${cat.category}</button>
+              <button class="btn btn-sm hover:bg-red-500 hover:text-white">${cat.category}</button>
               `
               // append the element into the categoryContainer
               categoryContainer.append(categoryBtn)
