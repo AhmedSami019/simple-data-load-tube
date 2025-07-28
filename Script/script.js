@@ -17,7 +17,7 @@ const loadCategoryVideo = (id)=>{
     const url = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`
     fetch(url)
     .then(res => res.json())
-    .then(data => console.log(data.category))
+    .then(data => displayVideo(data.category))
 }
 
 // this function about display the category menu
@@ -42,7 +42,7 @@ const displayVideo = (videos) => {
   const videoContainer = document.getElementById("video-container");
   // loop operation into the array
   videos.map((video) => {
-    console.log(video);
+
     const {
       category_id,
       description,
@@ -52,7 +52,7 @@ const displayVideo = (videos) => {
       thumbnail,
       authors,
     } = video;
-console.log(title);
+
     // create element
     const videoCard = document.createElement("div");
     videoCard.innerHTML = `
