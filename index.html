@@ -28,7 +28,7 @@
 
     <!-- categories section -->
     <nav id="category-container" class="flex justify-center gap-4 my-2">
-      <button class="btn btn-sm hover:bg-red-500 hover:text-white">All</button>
+      <button onclick="loadVideo()" class="btn btn-sm hover:bg-red-500 hover:text-white">All</button>
     </nav>
 
     <!-- this video display section -->
@@ -36,12 +36,15 @@
       id="video-container"
       class="w-11/12 mx-auto grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 mt-5"
     >
-      <div class="card bg-base-100 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    <!-- <div class="card bg-base-100 shadow-sm">
+        <figure class="relative">
+          <img class="w-full h-50"
+            src="https://i.ibb.co/L1b6xSq/shape.jpg"
             alt="Shoes"
           />
+          <span class="bg-gray-200 absolute bottom-2 right-2 px-1 text-sm rounded-md">
+            3hr 43min ago
+          </span>
         </figure>
         <div class="card-body px-4 flex flex-row justify-between gap-5 ">
           <div class="avatar">
@@ -55,129 +58,20 @@
           </div>
           <div>
             <h2 class="card-title text-base">Building a Winning UX Strategy Using the Kano Model</h2>
-            <p class="text-gray-600 text-sm">
+              <p class="text-gray-600 text-sm flex items-center gap-3">
               the name
-            </p>
+              <img class="w-5" src="https://img.icons8.com/?size=96&id=FNbnqlDTjR45&format=gif" alt="">
+              </p>
+
             <p class="text-gray-600 text-sm mt-2">
               1.6k views
             </p>
           </div>
 
         </div>
-      </div>
-      <div class="card bg-base-100 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
-          />
-        </figure>
-        <div class="card-body px-4 flex flex-row justify-between gap-5 ">
-          <div class="avatar">
-            <div
-              class="ring-primary ring-offset-base-100 w-10 h-10 rounded-full ring-2 ring-offset-2"
-            >
-              <img
-                src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
-              />
-            </div>
-          </div>
-          <div>
-            <h2 class="card-title text-base">Building a Winning UX Strategy Using the Kano Model</h2>
-            <p class="text-gray-600 text-sm">
-              the name
-            </p>
-            <p class="text-gray-600 text-sm mt-2">
-              1.6k views
-            </p>
-          </div>
+      </div> -->
+    </section>
 
-        </div>
-      </div>      <div class="card bg-base-100 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
-          />
-        </figure>
-        <div class="card-body px-4 flex flex-row justify-between gap-5 ">
-          <div class="avatar">
-            <div
-              class="ring-primary ring-offset-base-100 w-10 h-10 rounded-full ring-2 ring-offset-2"
-            >
-              <img
-                src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
-              />
-            </div>
-          </div>
-          <div>
-            <h2 class="card-title text-base">Building a Winning UX Strategy Using the Kano Model</h2>
-            <p class="text-gray-600 text-sm">
-              the name
-            </p>
-            <p class="text-gray-600 text-sm mt-2">
-              1.6k views
-            </p>
-          </div>
-
-        </div>
-      </div>      <div class="card bg-base-100 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
-          />
-        </figure>
-        <div class="card-body px-4 flex flex-row justify-between gap-5 ">
-          <div class="avatar">
-            <div
-              class="ring-primary ring-offset-base-100 w-10 h-10 rounded-full ring-2 ring-offset-2"
-            >
-              <img
-                src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
-              />
-            </div>
-          </div>
-          <div>
-            <h2 class="card-title text-base">Building a Winning UX Strategy Using the Kano Model</h2>
-            <p class="text-gray-600 text-sm">
-              the name
-            </p>
-            <p class="text-gray-600 text-sm mt-2">
-              1.6k views
-            </p>
-          </div>
-
-        </div>
-      </div>      <div class="card bg-base-100 shadow-sm">
-        <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
-          />
-        </figure>
-        <div class="card-body px-4 flex flex-row justify-between gap-5 ">
-          <div class="avatar">
-            <div
-              class="ring-primary ring-offset-base-100 w-10 h-10 rounded-full ring-2 ring-offset-2"
-            >
-              <img
-                src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp"
-              />
-            </div>
-          </div>
-          <div>
-            <h2 class="card-title text-base">Building a Winning UX Strategy Using the Kano Model</h2>
-            <p class="text-gray-600 text-sm">
-              the name
-            </p>
-            <p class="text-gray-600 text-sm mt-2">
-              1.6k views
-            </p>
-          </div>
-
-        </div>
-      </div>
 
     <script src="Script/script.js"></script>
   </body>
