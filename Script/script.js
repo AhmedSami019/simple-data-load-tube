@@ -20,6 +20,7 @@ const loadCategoryVideo = (id)=>{
     .then(data => displayVideo(data.category))
 }
 
+
 // this function about display the category menu
 const displayData = (data) => {
   // get the container
@@ -40,6 +41,7 @@ const displayData = (data) => {
 const displayVideo = (videos) => {
   // get the container
   const videoContainer = document.getElementById("video-container");
+  videoContainer.innerHTML = "";
   // loop operation into the array
   videos.map((video) => {
 
