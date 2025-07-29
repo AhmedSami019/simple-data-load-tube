@@ -1,3 +1,11 @@
+// function to remove active class from btn
+const removeActiveClass = () => {
+  const activeBtns = document.getElementsByClassName("active");
+  for (const btn of activeBtns) {
+    btn.classList.remove("active");
+  }
+};
+
 // this function about load the category menu
 const loadData = () => {
   fetch("https://openapi.programming-hero.com/api/phero-tube/categories")
@@ -9,22 +17,24 @@ const loadData = () => {
 const loadVideo = () => {
   fetch("https://openapi.programming-hero.com/api/phero-tube/videos")
     .then((res) => res.json())
-    .then((data) => displayVideo(data.videos));
+    .then((data) => {
+      document.getElementById("btn-all").classList.add("active");
+      displayVideo(data.videos);
+    });
 };
 
 // this function about to load video base on category
-const loadCategoryVideo = (id)=>{
-    const url = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`
-    fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      const clickedBtn = document.getElementById(`btn-${id}`)
-      console.log(clickedBtn);
-      clickedBtn.classList.add("active")
-      displayVideo(data.category)
-    })
-}
-
+const loadCategoryVideo = (id) => {
+  const url = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      removeActiveClass();
+      const clickedBtn = document.getElementById(`btn-${id}`);
+      clickedBtn.classList.add("active");
+      displayVideo(data.category);
+    });
+};
 
 // this function about display the category menu
 const displayData = (data) => {
@@ -54,11 +64,10 @@ const displayVideo = (videos) => {
       <img src="assets/Icon.png" alt="">
       <h2 class="text-4xl font-semibold">Oppos!! there is no content</h2>
      </div>
-    `
+    `;
   }
   // loop operation into the array
   videos.map((video) => {
-
     const {
       category_id,
       description,
@@ -113,4 +122,3 @@ const displayVideo = (videos) => {
 };
 
 loadData();
-
