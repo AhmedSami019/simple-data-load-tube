@@ -17,7 +17,12 @@ const loadCategoryVideo = (id)=>{
     const url = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`
     fetch(url)
     .then(res => res.json())
-    .then(data => displayVideo(data.category))
+    .then(data => {
+      const clickedBtn = document.getElementById(`btn-${id}`)
+      console.log(clickedBtn);
+      clickedBtn.classList.add("active")
+      displayVideo(data.category)
+    })
 }
 
 
@@ -30,7 +35,7 @@ const displayData = (data) => {
     // create element
     const categoryBtn = document.createElement("div");
     categoryBtn.innerHTML = `
-              <button onclick="loadCategoryVideo(${cat.category_id})" class="btn btn-sm hover:bg-red-500 hover:text-white">${cat.category}</button>
+              <button id="btn-${cat.category_id}" onclick="loadCategoryVideo(${cat.category_id})" class="btn btn-sm hover:bg-red-500 hover:text-white">${cat.category}</button>
               `;
     // append the element into the categoryContainer
     categoryContainer.append(categoryBtn);
@@ -42,6 +47,15 @@ const displayVideo = (videos) => {
   // get the container
   const videoContainer = document.getElementById("video-container");
   videoContainer.innerHTML = "";
+
+  if (videos.length == 0) {
+    videoContainer.innerHTML = `
+    <div class="col-span-full text-center flex flex-col mt-10 md:mt-20 gap-5 items-center justify-center">
+      <img src="assets/Icon.png" alt="">
+      <h2 class="text-4xl font-semibold">Oppos!! there is no content</h2>
+     </div>
+    `
+  }
   // loop operation into the array
   videos.map((video) => {
 
