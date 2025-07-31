@@ -37,6 +37,36 @@ const loadCategoryVideo = (id) => {
     });
 };
 
+// this function use to load details of video
+const loadVideoDetails = (video_id)=>{
+  const url = `https://openapi.programming-hero.com/api/phero-tube/video/${video_id}`
+  fetch(url)
+  .then(res => res.json())
+  .then(data => displayVideoDetails(data.video))
+}
+
+// this function for display video details 
+const displayVideoDetails = (video)=>{
+
+  const {thumbnail, title, description} = video
+
+  document.getElementById('videoDetails').showModal()
+  const detailsContainer = document.getElementById('details-container')
+  detailsContainer.innerHTML = `
+  <div class="card bg-base-100 image-full w-96 shadow-sm">
+  <figure>
+    <img
+      src="${thumbnail}"
+      alt="Shoes" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title font-semibold text-xl">${title}</h2>
+    <p>${description}</p>
+  </div>
+</div>
+  `
+}
+
 // this function about display the category menu
 const displayData = (data) => {
   // get the container
@@ -113,8 +143,8 @@ const displayVideo = (videos) => {
               ${others.views}
             </p>
           </div>
-
         </div>
+        <button onclick=loadVideoDetails('${video_id}') class="btn btn-block">show details</button>
       </div>
         `;
     // append the element into the container
