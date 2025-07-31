@@ -136,8 +136,8 @@ const displayVideo = (videos) => {
             <h2 class="card-title text-base">${title}</h2>
             <p class="text-gray-600 text-sm flex items-center gap-3">
               ${authors[0].profile_name}
+              ${authors[0].verified == true ? `<img class="w-5" src="https://img.icons8.com/?size=96&id=FNbnqlDTjR45&format=gif" alt="">` : ``}
               
-              <img class="w-5" src="https://img.icons8.com/?size=96&id=FNbnqlDTjR45&format=gif" alt="">
               </p>
             <p class="text-gray-600 text-sm mt-2">
               ${others.views}
